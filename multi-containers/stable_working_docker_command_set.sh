@@ -15,3 +15,7 @@ docker run --name mongodb --rm -d -v data:/data/db --network g-net -e MONGO_INIT
 
 # bind mount 
 docker run --name goals-backend -v /Users/bharat.verma/code/personal/Docker_And_Kubernetes_2022/multi-containers/backend:/app -v logs:/app/logs -v /app/node_modules --rm -d -p 80:80 --network g-net goals-node
+
+# with env vars 
+
+docker run --name goals-backend -v /Users/bharat.verma/code/personal/Docker_And_Kubernetes_2022/multi-containers/backend:/app -v logs:/app/logs -v /app/node_modules -e MONGODB_PASSWORD=oracle --rm -d -p 80:80 --network g-net goals-node
