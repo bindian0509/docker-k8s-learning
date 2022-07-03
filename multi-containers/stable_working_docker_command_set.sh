@@ -13,9 +13,13 @@ docker run --name goals-backend --rm -d -p 80:80 --network g-net goals-node
 
 docker run --name mongodb --rm -d -v data:/data/db --network g-net -e MONGO_INITDB_ROOT_USERNAME=root -e MONGO_INITDB_ROOT_PASSWORD=oracle mongo
 
-# bind mount 
+# bind mount - backend 
 docker run --name goals-backend -v /Users/bharat.verma/code/personal/Docker_And_Kubernetes_2022/multi-containers/backend:/app -v logs:/app/logs -v /app/node_modules --rm -d -p 80:80 --network g-net goals-node
 
-# with env vars 
+# with env vars - backend 
 
 docker run --name goals-backend -v /Users/bharat.verma/code/personal/Docker_And_Kubernetes_2022/multi-containers/backend:/app -v logs:/app/logs -v /app/node_modules -e MONGODB_PASSWORD=oracle --rm -d -p 80:80 --network g-net goals-node
+
+# with env vars - frontend  
+
+docker run --name goals-frontend -v /Users/bharat.verma/code/personal/Docker_And_Kubernetes_2022/multi-containers/frontend/src:/app/src --rm -d -p 3000:3000 goals-react
