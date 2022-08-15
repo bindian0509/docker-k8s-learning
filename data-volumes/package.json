@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
-  "author": "Maximilian Schwarzmüller / Academind GmbH",
+  "author": "Bharat Verma",
   "license": "ISC",
   "scripts": {
     "start": "nodemon server.js"
