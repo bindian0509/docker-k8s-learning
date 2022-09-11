@@ -14,4 +14,10 @@ spec:
     spec:
       containers:
         - name: story
-          image: bindian0509/kub-data-demo
+          image: bindian0509/kub-data-demo:2
+          volumeMounts:
+            - mountPath: /app/story
+              name: story-volume
+      volumes:
+        - name: story-volume
+          emptyDir: {}
