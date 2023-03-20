@@ -4,7 +4,7 @@ metadata:
   name: users-deployment
 spec:
   replicas: 1
-  selector: 
+  selector:
     matchLabels:
       app: users
   template:
@@ -14,4 +14,11 @@ spec:
     spec:
       containers:
         - name: users
-          image: academind/kub-demo-users
+          image: bindian0509/k8s-net-users
+          resources:
+            requests:
+              memory: "512Mi"
+              cpu: "900m"
+            limits:
+              memory: "512Mi"
+              cpu: "900m"
